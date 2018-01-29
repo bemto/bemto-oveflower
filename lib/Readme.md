@@ -25,19 +25,19 @@ import BemtoOverflower from 'bemto-overflower';
 
 This component provides all the stuff that is needed for it to work, and in most cases you won't need to style it in any way, so you could use it right away.
 
-By default all it would do is just make your content non-wrappable, have max-width to 100% and ellispis on text overflow (resize this block or browser window to see it in action):
-
-    <BemtoOverflower>
-      Some long text that could become shorter.
-    </BemtoOverflower>
-
-However, the main feature is much more powerful: you can pass a string or a node as a `__Overflow` prop and it would create an element that would adapt to its container's width: whenever there won't be enough space for its original content, the content from the `__Overflow` part would be displayed:
+For using the main feature of bemto-overflower, you must pass a string or a node as a `__Overflow` prop and it would create an element that would adapt to its container's width: whenever there won't be enough space for its original content, the content from the `__Overflow` part would be displayed:
 
     <BemtoOverflower __Overflow='Short text here is.'>
       Some long text that could become shorter.
     </BemtoOverflower>
 
-In future we could add a way to pass an array of possible replacements to enable multi-level overflower, but for now you can just pass another one to its `__Overflow` to make it three-leveled:
+Its possible to not pass `__Overflower` element, this way our content would just have `text-overflow: ellipsis` on overflow:
+
+    <BemtoOverflower>
+      Some long text that could become trimmed with ellipsis.
+    </BemtoOverflower>
+
+In future we could add a way to pass an array of possible replacements to enable multi-level overflower (or another way of doing it), but for now you can just pass another one to its `__Overflow` to make it three-leveled:
 
     <BemtoOverflower
       __Overflow={
