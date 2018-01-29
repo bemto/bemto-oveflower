@@ -1,5 +1,12 @@
 This is an implementation of a flexible overflow element (see [article about it](http://kizu.ru/en/blog/flexible-overflow/)), which allows us to have a responsive text snippet that would adjust its content based on available space.
 
+[![Build Status][build]][build-link] [![NPM package version][version]][version-link]
+
+[build]: https://travis-ci.org/bemto/bemto-overflower.svg?branch=master
+[build-link]: https://travis-ci.org/bemto/bemto-overflower
+[version]: https://img.shields.io/npm/v/bemto-overflower.svg
+[version-link]: https://www.npmjs.com/package/bemto-overflower
+
 This component has all the powers of bemto-components beneath, so you can use modifiers, polymorphic tags and all the other stuff. See the docs of [bemto-components](http://kizu.ru/bemto-components/#elements) for more features and [this component's source code](https://github.com/bemto/bemto-overflower) to see how easily it is done.
 
 ### Installation & Usage
