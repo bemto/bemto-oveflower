@@ -11,6 +11,8 @@ This component has all the powers of bemto-components beneath, so you can use mo
 
 ### Installation & Usage
 
+Note: `bemto-overflower` uses [styled-components](https://www.styled-components.com/) as a peer dependency, as its bad to include more than one instance of styled-components in your app, so you need to have it installed as well.
+
 In your console:
 
 ``` sh

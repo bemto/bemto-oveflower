@@ -1,6 +1,6 @@
 {
   "name": "bemto-overflower",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Flexible content overflow based on bemto-components & styled-components",
   "main": "lib/index.js",
   "scripts": {
@@ -24,8 +24,10 @@
   },
   "homepage": "https://github.com/bemto/bemto-overflower#readme",
   "dependencies": {
-    "bemto-components": "^2.0.0",
-    "styled-components": "^3.1.6"
+    "bemto-components": "^2.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": ">= 2 < 4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
