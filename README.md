@@ -5,7 +5,7 @@
 [version]: https://img.shields.io/npm/v/bemto-overflower.svg
 [version-link]: https://www.npmjs.com/package/bemto-overflower
 
-This is a flexible content overflow component, using [bemto-components](https://github.com/kizu/bemto-components) and [styled-components](https://www.styled-components.com/).
+This is a flexible content overflow component, using [bemto-components](https://github.com/bemto/bemto-components) and [styled-components](https://www.styled-components.com/).
 
 The documentation for the bemto-overflower is available as a [section of bemto-components' docs](http://kizu.ru/bemto-components/#bemtooverflower). You could see there all the features of bemto-overflower and play with them right in your browser in an interactive playgrounds.
 
