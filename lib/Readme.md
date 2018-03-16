@@ -97,6 +97,7 @@ With the existent structure its really easy to create overflower that would be r
       __Overflow: " "
     })`
       &__Overflow {
+        position: relative;
         z-index: 1;
         
         margin-bottom: -1.5em;
@@ -108,7 +109,7 @@ With the existent structure its really easy to create overflower that would be r
     `;
 
     <GradientOverflower>
-      Some long text that could become shorter.
+      Some long text that fades into gradient.
     </GradientOverflower>
 
 This works really easily: instead of an overflower with some extra text, we make it empty (but containing just a single nbsp in order not to lose the baseline), but then make it not to take any space by utilizing a negative margin, then moving it in front of our content using z-index and now we can make any visual effect for our fade, in our example — white gradient.
@@ -120,17 +121,19 @@ Its also really easy to utilize a mask in case its browser support is ok for you
     const MaskOverflower = BemtoOverflower.extend.attrs({
       __Overflow: props => props.children
     })`
-      &__Overflow {
-        text-overflow: clip;
-        mask-image:
-          linear-gradient(to right, #000, #000 calc(100% - 50px), transparent);
+      @supports (mask-image: none) {
+        &__Overflow {
+          text-overflow: clip;
+          mask-image:
+            linear-gradient(to right, #000, #000 calc(100% - 50px), transparent);
+        }
       }
     `;
 
     <div style={{ background: 'linear-gradient(to top right, pink, orange)', padding: 40 }}>
       <MaskOverflower>
-        Some long text that could become shorter.
+        Some long text that fades into gradient mask.
       </MaskOverflower>
     </div>
 
-You can see how its even less code, though we duplicate (automatically) our content inside overflower in order to use a mask for it.
+You can see how its even less code, though we duplicate (automatically) our content inside overflower in order to use a mask for it. It would also fallback to default ellipsis when there'd be no `mask-image` support.
