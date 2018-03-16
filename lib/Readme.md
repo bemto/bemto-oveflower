@@ -118,19 +118,19 @@ Note how this gradient would appear only when there won't be enough space for ou
 Its also really easy to utilize a mask in case its browser support is ok for you and you want to have your overflower over any background, not necessary solid:
 
     const MaskOverflower = BemtoOverflower.extend.attrs({
-          __Overflow: props => props.children
-        })`
-          &__Overflow {
-            text-overflow: clip;
-            mask-image:
-              linear-gradient(to right, #000, #000 calc(100% - 50px), transparent);
-          }
-        `;
+      __Overflow: props => props.children
+    })`
+      &__Overflow {
+        text-overflow: clip;
+        mask-image:
+          linear-gradient(to right, #000, #000 calc(100% - 50px), transparent);
+      }
+    `;
 
-        <div style={{ background: 'linear-gradient(to top right, pink, orange)', padding: 40 }}>
-          <MaskOverflower>
-            Some long text that could become shorter.
-          </MaskOverflower>
-        </div>
+    <div style={{ background: 'linear-gradient(to top right, pink, orange)', padding: 40 }}>
+      <MaskOverflower>
+        Some long text that could become shorter.
+      </MaskOverflower>
+    </div>
 
 You can see how its even less code, though we duplicate (automatically) our content inside overflower in order to use a mask for it.
