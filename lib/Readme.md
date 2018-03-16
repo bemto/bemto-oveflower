@@ -88,3 +88,49 @@ The following Elements are available for styling and adding additional props (se
     </Overflower>
 
 You can see in the above example how you can control which styles would be applied to which part. However, it is not recommended to use this way of styling parts of Overflower — it is much better to style the elements that you would pass to them otherwise.
+
+### Gradient Overflow
+
+With the existent structure its really easy to create overflower that would be rendered as you'd like. For example, we can make an overflow into a gradient, which when placed over a solid background of the same color would make it look like a gradient fade:
+
+    const GradientOverflower = BemtoOverflower.extend.attrs({
+      __Overflow: " "
+    })`
+      &__Overflow {
+        z-index: 1;
+        
+        margin-bottom: -1.5em;
+
+        background:
+          linear-gradient(to left, #FFF, rgba(255, 255, 255, 0))
+          no-repeat 100% 0/50px 100%;
+      }
+    `;
+
+    <GradientOverflower>
+      Some long text that could become shorter.
+    </GradientOverflower>
+
+This works really easily: instead of an overflower with some extra text, we make it empty (but containing just a single nbsp in order not to lose the baseline), but then make it not to take any space by utilizing a negative margin, then moving it in front of our content using z-index and now we can make any visual effect for our fade, in our example — white gradient.
+
+Note how this gradient would appear only when there won't be enough space for our original text: it uses the same method as our usual overflower, which is really handy.
+
+Its also really easy to utilize a mask in case its browser support is ok for you and you want to have your overflower over any background, not necessary solid:
+
+    const MaskOverflower = BemtoOverflower.extend.attrs({
+          __Overflow: props => props.children
+        })`
+          &__Overflow {
+            text-overflow: clip;
+            mask-image:
+              linear-gradient(to right, #000, #000 calc(100% - 50px), transparent);
+          }
+        `;
+
+        <div style={{ background: 'linear-gradient(to top right, pink, orange)', padding: 40 }}>
+          <MaskOverflower>
+            Some long text that could become shorter.
+          </MaskOverflower>
+        </div>
+
+You can see how its even less code, though we duplicate (automatically) our content inside overflower in order to use a mask for it.
