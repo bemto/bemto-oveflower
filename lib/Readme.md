@@ -109,7 +109,7 @@ With the existent structure its really easy to create overflower that would be r
     `;
 
     <GradientOverflower>
-      Some long text that fades into gradient.
+      Some really long text that fades into a gradient overlay.
     </GradientOverflower>
 
 This works really easily: instead of an overflower with some extra text, we make it empty (but containing just a single nbsp in order not to lose the baseline), but then make it not to take any space by utilizing a negative margin, then moving it in front of our content using z-index and now we can make any visual effect for our fade, in our example — white gradient.
@@ -132,7 +132,7 @@ Its also really easy to utilize a mask in case its browser support is ok for you
 
     <div style={{ background: 'linear-gradient(to top right, pink, orange)', padding: 40 }}>
       <MaskOverflower>
-        Some long text that fades into gradient mask.
+        Some really long text that fades into a proper gradient mask.
       </MaskOverflower>
     </div>
 
